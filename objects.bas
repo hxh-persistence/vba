@@ -21,3 +21,10 @@ Sub CreateDic()
     Set dic = Nothing
 End Sub
 
+Sub CreateInput()
+    Dim length As Integer
+    Dim width As Integer
+
+    
+End Sub
+
