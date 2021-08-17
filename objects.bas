@@ -21,10 +21,12 @@ Sub CreateDic()
     Set dic = Nothing
 End Sub
 
-Sub CreateInput()
+Function CreateInput()
     Dim length As Integer
     Dim width As Integer
 
-    
-End Sub
+    length = InputBox("Enter length", "Enter number")
+    width = InputBox("Enter length", "Enter number")
+    CreateInput = length * width
+End Function
 
