@@ -1,0 +1,19 @@
+Private Sub WriteLog(ByVal Msg As String)
+        Console.WriteLine(Msg)
+        Dim varAppPath As String
+        varAppPath = System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "log"
+        System.IO.Directory.CreateDirectory(varAppPath)
+        Dim head As String
+        head = System.DateTime.Now.Hour.ToString() + ":" + System.DateTime.Now.Minute.ToString()
+        Msg = head + System.Environment.NewLine + Msg + System.Environment.NewLine
+        Dim strDate As String
+        strDate = System.DateTime.Now.ToString("yyyyMMdd")
+        Dim strFile As String
+        strFile = varAppPath + "\" + strDate + ".log"
+        Console.WriteLine(strFile)
+        Dim SW As System.IO.StreamWriter
+        SW = New System.IO.StreamWriter(strFile, True)
+        SW.WriteLine(Msg)
+        SW.Flush()
+        SW.Close()
+End Sub
